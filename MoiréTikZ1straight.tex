@@ -1,0 +1,18 @@
+\documentclass{standalone}
+\usepackage{ebgaramond-maths}
+\usepackage{tikz}
+\definecolor{V}{RGB}{148,0,0}
+\def\Xscale{16}
+\def\Yscale{9}
+\def\TotalP{20}
+\begin{document}
+\begin{tikzpicture}[x=15pt,y=15pt]
+    \path[use as bounding box] (0,0) rectangle (\Xscale,\Yscale);
+    \foreach \P in {1,...,\TotalP} {
+        \coordinate (B\P) at ({\P*\Xscale/\TotalP-0.5*\Xscale/\TotalP},1.5);
+        \coordinate (T\P) at ({\P*\Xscale/\TotalP-0.5*\Xscale/\TotalP},8.5);
+    }
+    \foreach \B in {1,...,\TotalP} {\foreach \T in {1,...,\TotalP} {\draw[V,line cap=round,line width=0.2pt] (B\B)--(T\T);}}
+    \node[V,anchor=south east] at (current bounding box.south east) {latex.guru};
+\end{tikzpicture}
+\end{document}
