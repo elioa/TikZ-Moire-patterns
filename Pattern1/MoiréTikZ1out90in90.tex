@@ -1,0 +1,26 @@
+% Original code Elio A. Farina latex.guru
+% This work is licensed under CC BY-SA 4.0
+\documentclass{standalone}
+\usepackage{ebgaramond-maths}
+\usepackage{ccicons}
+\usepackage{tikz}
+\definecolor{V}{RGB}{148,0,0}
+\def\Xscale{16}
+\def\Yscale{9}
+\def\Xfactor{1}
+\def\Yfactor{0.65}
+\def\Xshift{-0.5}
+\def\Yshift{0.2}
+\def\TotalP{20}
+\begin{document}
+\begin{tikzpicture}[x=15pt,y=15pt]
+    \path[use as bounding box] (0,0) rectangle (\Xscale,\Yscale);
+    \foreach \P in {1,...,\TotalP} {
+        \coordinate (B\P) at ({\Xfactor*\P*\Xscale/\TotalP+\Xshift*\Xscale/\TotalP},{\Yfactor*1.5+\Yshift});
+        \coordinate (T\P) at ({\Xfactor*\P*\Xscale/\TotalP+\Xshift*\Xscale/\TotalP},{\Yfactor*8.5+\Yshift});
+    }
+    \foreach \B in {1,...,\TotalP} {\foreach \T in {1,...,\TotalP} {\draw[V,line cap=round,line width=0.2pt] (B\B)to[out=90,in=90](T\T);}}
+    \node[V,anchor=south east] at (current bounding box.south east) {\ccLogo\ccAttribution\ccShareAlike};
+    \node[V,anchor=south west] at (current bounding box.south west) {latex.guru};
+\end{tikzpicture}
+\end{document}
