@@ -6,7 +6,7 @@ This is a collection of some TikZ work I made to recreate some of the patterns.
 
 ![Pattern1](https://github.com/elioa/TikZ-Moire-patterns/blob/main/Pattern1/Moir%C3%A9TikZ1straight.png "Basci style pattern 1")
 
-Shield: [![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
+[![CC BY-SA 4.0][cc-by-sa-shield]][cc-by-sa]
 
 This work is licensed under a
 [Creative Commons Attribution-ShareAlike 4.0 International License][cc-by-sa].
